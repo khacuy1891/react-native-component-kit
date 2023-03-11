@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-component-kit": ["./src/index"]
+      "react-native-component-kit": ["./index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

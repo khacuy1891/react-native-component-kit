@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-component-kit';
+import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { multiply, AppWebView } from 'react-native-component-kit';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -12,7 +12,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.text}>Result: {result}</Text>
+        <AppWebView source={{ uri: 'https://google.com.vn' }} />
+      </SafeAreaView>
     </View>
   );
 }
@@ -20,12 +23,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  text: {
+    textAlign: 'center',
   },
 });
